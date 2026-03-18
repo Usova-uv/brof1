@@ -191,23 +191,22 @@ body { font-family: var(--font-body); color: var(--text); background: var(--whit
 .badge-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--red); }
 
 /* ===== TEAM ===== */
-.team-grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; }
+/* Усиленные стили для выравнивания карточек в ряд */
+.team-grid-5 {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: stretch !important;
+  gap: 20px !important;
+  flex-wrap: wrap !important;
+  /* Отменяем старые настройки сетки, если они были */
+  grid-template-columns: none !important; 
+}
+
 .team-card {
-  background: white; border-radius: 16px; overflow: hidden; text-align: center;
-  box-shadow: var(--shadow); transition: var(--transition); border: 1px solid var(--gray);
-  padding: 2rem 1.5rem;
-}
-.team-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
-.team-photo {
-  width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
-  margin: 0 auto 1rem; display: block; border: 4px solid var(--gray);
-  background: var(--gray);
-}
-.team-name { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--black); margin-bottom: 0.25rem; }
-.team-role { font-size: 0.85rem; color: var(--text-light); line-height: 1.5; }
-@media (max-width: 768px) {
-  .team-grid-5 { grid-template-columns: repeat(3, 1fr); }
-  #awards div[style*="grid-template-columns"] { grid-template-columns: repeat(2, 1fr) !important; }
+  min-width: 250px !important;
+  max-width: 300px !important;
+  width: auto !important;
+  flex: 0 0 auto !important; /* Запрещаем сжатие */
 }
 @media (max-width: 640px) {
   .team-grid-5 { grid-template-columns: repeat(2, 1fr); }
