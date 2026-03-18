@@ -203,10 +203,23 @@ body { font-family: var(--font-body); color: var(--text); background: var(--whit
 }
 
 .team-card {
-  min-width: 250px !important;
-  max-width: 300px !important;
+  min-width: 280px !important;
+  max-width: 350px !important;
   width: auto !important;
-  flex: 0 0 auto !important; /* Запрещаем сжатие */
+  flex: 0 0 auto !important;
+  padding: 2rem 1.5rem !important; /* Добавим внутренние отступы */
+  background: white !important;
+  border-radius: 16px !important;
+  box-shadow: var(--shadow) !important;
+  text-align: center !important;
+}.team-photo {
+  width: 120px !important;
+  height: 120px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  margin: 0 auto 1rem auto !important;
+  display: block !important;
+  border: 4px solid var(--gray) !important;
 }
 @media (max-width: 640px) {
   .team-grid-5 { grid-template-columns: repeat(2, 1fr); }
